@@ -1,0 +1,5 @@
+<div class="container">
+  <% @comics.each do |c| %>
+  <%= link_to c.title, c, class: 'btn btn-secondary' %>
+  <% end %>
+</div>

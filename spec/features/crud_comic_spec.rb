@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'CRUD of comics' do
   scenario '#index and #show successfully ' do
-    comic = Comic.create(title: 'Teste')
+    comic = Comic.create(title: 'Quadrinho')
 
     visit root_path
     click_on 'Comics'
