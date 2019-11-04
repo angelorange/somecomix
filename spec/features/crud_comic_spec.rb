@@ -2,17 +2,17 @@ require 'rails_helper'
 
 feature 'CRUD of comics' do
   scenario '#index and #show successfully ' do
-    comic = create(:comic)
+    comic = Comic.create(title: 'Teste')
 
     visit root_path
-    click on 'Comics'
+    click_on 'Comics'
     click_on comic.title
 
     expect(page).to have_content(comic.title)
   end
 
   scenario '#new and #create successfully' do
-    comic = build(:comic)
+    comic = Comic.new(title: 'Teste')
 
     visit root_path
     click_on 'Comics'
@@ -25,7 +25,7 @@ feature 'CRUD of comics' do
   end
 
   scenario '#new and #create failed' do
-    comic = build(:comic, title: '')
+    comic = Comic.new(title: ' ')
 
     visit root_path
     click_on 'Comics'
@@ -38,7 +38,7 @@ feature 'CRUD of comics' do
   end
 
   scenario '#edit and #update successfully' do
-    comic = create(:comic)
+    comic = Comic.create(title: 'Teste')
 
     visit root_path
     click_on 'Comics'
