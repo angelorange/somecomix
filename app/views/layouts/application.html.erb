@@ -11,6 +11,8 @@
 
   <body>
     <%= render 'shared/navbar' %>
+    <%= flash[:success] %>
+    <%= alert %>
     <%= yield %>
   </body>
 </html>

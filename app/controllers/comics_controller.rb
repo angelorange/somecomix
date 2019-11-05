@@ -4,6 +4,26 @@ class ComicsController < ApplicationController
   end
 
   def show
-    @comics = Comic.find(params[:id])
+    @comic = Comic.find(params[:id])
+  end
+
+  def new
+    @comic = Comic.new
+  end
+
+  def create
+    @comic = Comic.new(comics_params)
+      if @comic.save
+        flash[:success] = 'It was created successfully'
+        redirect_to @comic
+      else
+        render :new
+      end
+  end
+
+  private
+
+  def comics_params
+    params.require(:comic).permit(:title)
   end
 end
