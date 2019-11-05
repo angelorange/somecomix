@@ -21,6 +21,20 @@ class ComicsController < ApplicationController
       end
   end
 
+  def edit
+    @comic = Comic.find(params[:id])
+  end
+
+  def update
+    @comic = Comic.new(comics_params)
+    if @comic.save
+      flash[:success] = 'It was succesfully edited'
+      redirect_to @comic
+    else
+      render :new
+    end
+  end
+
   private
 
   def comics_params
