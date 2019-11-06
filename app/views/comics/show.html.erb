@@ -7,3 +7,8 @@
 <div class="container">
   <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
 </div>
+<div class="container" >
+  <% @pages.each do |page| %>
+    <%= link_to " pag ##{page.id}", comic_page_path(@comic, page) %>
+  <% end %>
+</div>

@@ -5,6 +5,8 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params[:id])
+    @pages = Page.where(comic: @comic)
+    @pages = [] if @pages.nil?
   end
 
   def new
