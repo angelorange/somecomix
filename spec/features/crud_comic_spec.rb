@@ -51,5 +51,18 @@ feature 'CRUD of comics' do
     expect(page).not_to have_content(comic.title)
     expect(page).to have_content('puzzlesline')
   end
+
+  scenario '#delete successfully' do
+    comic = Comic.create(title: 'Teste')
+
+    visit root_path
+    click_on 'Comics'
+    click_on comic.title
+    click_on 'Delete'
+
+    expect(page).to have_content('It was deleted successfully')
+    expect(page).not_to have_content(comic.title)
+    expect(Comic.count).to eq(0)
+  end
 end
 

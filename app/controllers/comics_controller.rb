@@ -35,9 +35,16 @@ class ComicsController < ApplicationController
     end
   end
 
+  def destroy
+    @comic = Comic.find(params[:id])
+    @comic.destroy
+    flash[:alert] = 'It was deleted successfully'
+    redirect_to comics_path
+  end
   private
 
   def comics_params
     params.require(:comic).permit(:title)
   end
+
 end
