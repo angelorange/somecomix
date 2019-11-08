@@ -37,11 +37,11 @@ feature 'CRUD of page' do
     click_on comic.title
     click_on pagina.id
     click_on 'Edit'
-    fill_in 'Title', with: 'puzzlesline'
+    fill_in 'Text', with: 'puzzlesline'
     click_on 'Send'
 
     expect(page).to have_content('It was successfully edited')
-    expect(page).not_to have_content(comic.title)
+    expect(page).not_to have_content(comic.text)
     expect(page).to have_content('puzzlesline')
   end
 

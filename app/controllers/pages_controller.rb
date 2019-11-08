@@ -19,6 +19,22 @@ class PagesController < ApplicationController
       end
   end
 
+  def edit
+    @page = Page.find(params[:id])
+    @comic = Comic.find(params[:comic_id])
+  end
+
+  def update
+    @page = Page.find(params[:id])
+    @comic = Comic.find(params[:comic_id])
+    if @page.update(page_params)
+      flash[:success] = 'It was succesfully edited'
+      redirect_to comic_page_path(@comic, @page)
+    else
+      render :new
+    end
+  end
+
   private
 
   def page_params

@@ -1,4 +1,4 @@
-<%= simple_form_for @page, url: :comic_pages do |p| %>
+<%= simple_form_for @page, url: :comic_page do |p| %>
   <%= p.input :text %>
   <%= p.input :comic_id, as: :hidden, input_html: { value: @comic.id } %>
   <%= p.submit 'Send', class: 'btn btn-primary' %>
