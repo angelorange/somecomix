@@ -12,3 +12,6 @@
     <%= link_to " pag ##{page.id}", comic_page_path(@comic, page) %>
   <% end %>
 </div>
+<div class="container">
+  <%= link_to 'New Page', new_comic_page_path(@comic), class: 'btn btn-secondary'%>
+</div>
