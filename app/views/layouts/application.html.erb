@@ -11,10 +11,18 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <div class="container">
-      <%= flash[:success] %>
-      <%= alert %>
-    </div>
+    <% unless flash[:success].nil? %>
+      <div class="container alert alert-primary" >
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+
+    <% unless alert.nil? %>
+      <div class="container alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
+
     <div class="container">
       <%= yield %>
     </div>

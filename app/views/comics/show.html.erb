@@ -1,12 +1,20 @@
 <div class="container">
-  <%= @comic.title %>
+  <h1><%= @comic.title %></h1>
 </div>
-<div class="container">
-  <%= link_to 'Edit', edit_comic_path, class: 'btn btn-secondary' %>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Descricao</h5>
+    <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
+  </div>
 </div>
-<div class="container">
-  <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
+
+<div class="card" style='margin-top: 5px;'>
+  <div class="card-body">
+    <%= link_to 'Edit', edit_comic_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
+  </div>
 </div>
+
 <div class="container" >
   <% @pages.each do |page| %>
     <%= link_to " pag ##{page.id}", comic_page_path(@comic, page) %>

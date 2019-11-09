@@ -41,7 +41,7 @@ feature 'CRUD of page' do
     click_on 'Send'
 
     expect(page).to have_content('It was successfully edited')
-    expect(page).not_to have_content(comic.text)
+    expect(page).not_to have_content(pagina.text)
     expect(page).to have_content('puzzlesline')
   end
 
@@ -58,6 +58,6 @@ feature 'CRUD of page' do
     click_on 'Delete'
 
     expect(page).to have_content('It was deleted successfully')
-    expect(comic.page.count).to eq(0)
+    expect(comic.pages.count).to eq(0)
   end
 end

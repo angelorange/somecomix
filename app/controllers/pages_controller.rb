@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @comic = Comic.find(params[:comic_id])
     if @page.update(page_params)
-      flash[:success] = 'It was succesfully edited'
+      flash[:success] = 'It was successfully edited'
       redirect_to comic_page_path(@comic, @page)
     else
       render :new
