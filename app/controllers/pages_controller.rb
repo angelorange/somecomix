@@ -46,6 +46,6 @@ class PagesController < ApplicationController
   private
 
   def page_params
-    params.require(:page).permit(:text, :comic_id)
+    params.require(:page).permit(:text, :comic_id, :image)
   end
 end

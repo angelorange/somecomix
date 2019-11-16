@@ -1,5 +1,6 @@
 <%= simple_form_for @page, url: :comic_pages do |p| %>
   <%= p.input :text %>
   <%= p.input :comic_id, as: :hidden, input_html: { value: @comic.id } %>
+  <%= p.file_field :image %>
   <%= p.submit 'Send', class: 'btn btn-primary' %>
 <% end %>

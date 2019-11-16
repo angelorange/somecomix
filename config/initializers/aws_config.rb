@@ -1,0 +1,4 @@
+Aws.config.update({region: 'sa-east-1'})
+
+AWS_ACCESS_KEY_ID = 'AKIAICTQHKKFFSZZFFPA'
+AWS_SECRET_ACCESS_KEY = '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'
