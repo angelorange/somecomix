@@ -1,6 +1,6 @@
 FROM ruby:2.6.3
 
-RUN apt-get update -qq && apt-get install -y build-essential
+RUN apt-get update -qq && apt-get install -y build-essential imagemagick
 
 # for nokogiri
 RUN apt-get install -y libxml2-dev libxslt1-dev
