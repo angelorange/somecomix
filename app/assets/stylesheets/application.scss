@@ -8,12 +8,18 @@
   margin: 5px;
 }
 
-body {
-  background-color: #3C4245;
-
-  color: #F9F9F9;
-}
-
 .card {
   color: #3C4245;
 }
+body {
+  color: #000000;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  background-color: #535353;
+}
+
+div {
+  padding: 25px;
+}
+
+
