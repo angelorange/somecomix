@@ -11,7 +11,9 @@
       <% end %>
     </ul>
   </div>
+<% if user_signed_in? %>
   <div class="container">
     <%= link_to 'New Comic', new_comic_path, class: 'btn btn-secondary'%>
   </div>
+<% end %>
 

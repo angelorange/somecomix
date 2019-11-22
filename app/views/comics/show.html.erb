@@ -7,28 +7,34 @@
     <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
   </div>
 </div>
-
+<% if user_signed_in? %>
 <div class="card" style='margin-top: 5px;'>
   <div class="card-body">
-    <%= link_to 'Edit', edit_comic_path, class: 'btn btn-secondary' %>
-    <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
+      <%= link_to 'Edit', edit_comic_path, class: 'btn btn-secondary' %>
+      <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="container" >
   <% @pages.each do |page| %>
     <%= link_to " pag ##{page.id}", comic_page_path(@comic, page) %>
   <% end %>
 </div>
-<div class="container">
-  <%= link_to 'New Page', new_comic_page_path(@comic), class: 'btn btn-secondary'%>
-</div>
 
-<div class="container" >
-  <div class="card" style='margin-top: 5px;'>
-      <div class="card-body">
-        <%= link_to 'Edit', edit_comic_path, class: 'btn btn-secondary' %>
-        <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
+<% if user_signed_in? %>
+  <div class="container">
+    <%= link_to 'New Page', new_comic_page_path(@comic), class: 'btn btn-secondary'%>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <div class="container" >
+    <div class="card" style='margin-top: 5px;'>
+        <div class="card-body">
+          <%= link_to 'Edit', edit_comic_path, class: 'btn btn-secondary' %>
+          <%= link_to 'Delete', @comic , method: 'delete', class: 'btn btn-secondary' %>
+        </div>
       </div>
   </div>
-</div>
+<% end %>

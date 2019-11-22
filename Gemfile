@@ -39,6 +39,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'paperclip'
 gem 'aws-sdk-s3'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
