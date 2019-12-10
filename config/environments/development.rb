@@ -5,8 +5,8 @@ Rails.application.configure do
     storage: :s3,
     s3_credentials: {
       bucket: 'somecomix',
-      access_key_id: 'AKIAICTQHKKFFSZZFFPA',
-      secret_access_key: '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',
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
       s3_region: 'sa-east-1',
     }
   }
