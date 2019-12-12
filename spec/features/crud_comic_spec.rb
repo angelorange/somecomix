@@ -13,7 +13,9 @@ feature 'CRUD of comics' do
 
   scenario '#new and #create successfully' do
     comic = Comic.new(title: 'Teste')
+    user = User.create(email: 'eu@mail.com', password: '123456')
 
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Comics'
     click_on 'New Comic'
@@ -26,20 +28,24 @@ feature 'CRUD of comics' do
 
   scenario '#new and #create failed' do
     comic = Comic.new(title: ' ')
-
+    user = User.create(email: 'eu@email.com', password: '123456')
+    
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Comics'
     click_on 'New Comic'
     fill_in 'Title', with: comic.title
     click_on 'Send'
-
+    
     expect(page).not_to have_content('It was created successfully')
     expect(page).to have_content("can't be blank")
   end
-
+  
   scenario '#edit and #update successfully' do
     comic = Comic.create(title: 'Teste')
+    user = User.create(email: 'eu@mail.com', password: '123456')
 
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Comics'
     click_on comic.title
@@ -54,7 +60,9 @@ feature 'CRUD of comics' do
 
   scenario '#delete successfully' do
     comic = Comic.create(title: 'Teste')
+    user = User.create(email: 'eu@mail.com', password: '123456')
 
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Comics'
     click_on comic.title

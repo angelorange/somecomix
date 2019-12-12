@@ -16,7 +16,9 @@ feature 'CRUD of page' do
   scenario '#new and #create successfully' do 
     comic = Comic.create(title: 'quadrinho')
     pagina = Page.new(text: 'um texto')
+    user = User.create(email: 'eu@mail.com', password: '123456')
 
+    login_as(user, :scope => :user)
     visit root_path 
     click_on 'Comics'
     click_on comic.title
@@ -31,7 +33,9 @@ feature 'CRUD of page' do
   scenario '#edit and #update successfully' do
     comic = Comic.create(title: 'teste')
     pagina = Page.create(text: 'um texto', comic: comic)
-
+    user = User.create(email: 'eu@mail.com', password: '123456')
+    
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Comics'
     click_on comic.title
@@ -49,8 +53,13 @@ feature 'CRUD of page' do
     comic = Comic.create(title: 'Teste')
     pagina = Page.create(text: 'um texto', comic: comic)
     comic2 = Comic.create(title: 'Test')
-    pagina2 = Page.create(text: 'segundo text', comic: comic2)
+
+
     
+    pagina2 = Page.create(text: 'segundo text', comic: comic2)
+    user = User.create(email: 'eu@mail.com', password: '123456')
+    
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Comics'
     click_on comic.title
