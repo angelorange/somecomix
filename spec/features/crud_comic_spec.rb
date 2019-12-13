@@ -49,6 +49,7 @@ feature 'CRUD of comics' do
     visit root_path
     click_on 'Comics'
     click_on comic.title
+    save_page
     click_on 'Edit'
     fill_in 'Title', with: 'puzzlesline'
     click_on 'Send'
