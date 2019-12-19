@@ -40,12 +40,12 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'paperclip'
 gem 'aws-sdk-s3'
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'capybara'
-  gem 'simple_form'
   gem 'dotenv-rails'
   gem 'sqlite3'
 end
