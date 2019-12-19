@@ -8,6 +8,4 @@ services:
     volumes:
       - .:/fonte
     ports:
-      - 3000:3000
-    env_file: 
-      - .env.docker
+      - 8080:3000
