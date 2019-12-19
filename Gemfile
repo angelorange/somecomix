@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'capybara'
   gem 'simple_form'
+  gem 'dotenv-rails'
 end
 
 group :development do
